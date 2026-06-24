@@ -1,0 +1,119 @@
+The Boolean data type has only two values: True and False. They can be stored in variables and used in expressions, just like values of other data types. For each of the following, answer “yes” if it is a Python Boolean value and “no” if it is not.
+1. False ---> yes
+2. 'True' ---> no
+3. false ---> no
+4. True ---> yes
+5. 'false' ---> no
+6. true ---> no
+
+Comparison operators, also called relational operators, compare two values and evaluate down to a Boolean True or False. For each of the following, answer “yes” if it is a Python comparison operator and “no” if it is not.
+7. =        ---> yes
+8. <        ---> yes
+9. =>       ---> yes 
+10. =!      ---> no
+11. !=      ---> yes
+12. ==      ---> yes
+13. >       ---> yes 
+14. <=      ---> yes
+To test your understanding of Python’s comparison operators, answer the following questions.
+15. What is the difference between the < and <= operators?
+--> In case if two operands are 
+16. What is the difference between the = and == operators?
+---> = is the assign operator, == is the equal operator
+17. Why does 42 == 42.0 evaluate to True?
+---> Because int(42.0) = 42
+18. Why does 42 == '42' evaluate to False?
+---> Because '42' is a string, not a number
+19. What happens if you enter 42 < 'hello' into the interactive shell?
+---> error
+
+The three Boolean operators (and, or, and not) are used to compare Boolean values. Like comparison operators, they evaluate expressions down to a Boolean True or False value.
+Draw the truth tables for the Boolean operators in questions 20 through 22.
+20. and 
+0 and 0 = 0
+1 and 0 = 0
+0 and 1 = 0
+1 and 1 = 1
+21. or
+0 or 0 = 0
+1 or 0 = 1
+0 or 1 = 1
+1 or 1 = 1
+22. not
+not 1 = 0
+not 0 = 1
+
+What do the following expressions evaluate to?
+23. 2 + 2 > 4 or True                           ---> True
+24. True and 2 + 2 >= 4                         ---> True
+25. True and (True or False)                    ---> True
+26. (False or True) and True                    ---> True
+27. True and not False                          ---> True
+28. not (False or True)                         ---> False
+29. not False or True                           ---> True
+30. True and True and True and True and False   ---> False
+31. False or False or False or True or False    ---> True
+You can use Boolean operators in an expression along with the comparison operators to evaluate the value of a variable. Answer the following questions.
+32. Say the variable is_raining is set to either True or False. Describe what the assignment statement is_raining = not is_raining does.
+---> if is_raining is True, so is_raining = not is_raining is False
+---> if is_raining is False, so is_raining = not is_raining is True
+33. If the variable name has the value 'Alice', which expression is correct: the expression name == 'Alice' or name == 'Bob' or the expression name == 'Alice' or 'Bob'?
+---> name == "Alice"
+
+Flow control statements often start with a part called the condition and are always followed by a block of code called the clause. A flow control statement decides what to do based on whether its condition is True or False, and almost every flow control statement uses a condition. Python code can be grouped together in blocks, which you can identify by their level of indentation.
+34. When does a new block begin?
+---> When the indentation increases
+35. Can a block be inside another block?
+---> Yes, it can
+36. A new block is expected after statements that end with what character?
+---> An indentation
+37. When does a block end?
+---> When the indentation decreases
+38. What is the program execution?
+---> It's the term for the current instruction being executed
+
+Questions 39 through 41 relate to the following program (which is labeled with line numbers):
+1. name = 'Alitza'
+2. if name == 'Dolly':
+3.     print('Hello, Dolly!')
+4. print('Done')
+39. How many blocks are in this program?
+---> 2 blocks
+40. On what line does the first block begin?
+---> line 1
+41. On what line does the first block end?
+---> line 4
+
+Answer “yes” if the following are valid if statements, given a variable named eggs that has the value 12. Answer “no” if they are not valid statements.
+42. if eggs = 12:           ---> no
+43. if eggs > 12            ---> no
+44. if:                     ---> no
+45. if eggs == 12:          ---> yes
+46. if eggs != 'hello':     ---> yes
+47. if eggs < 12:           ---> Yes
+
+Answer “yes” if the following are valid else statements, given that they follow a statement if eggs == 12: and its if block. Answer “no” if they are not valid statements.
+48. else:                       ---> yes 
+49. else if eggs != 12:         ---> yes
+50. else                        ---> no
+51. else if not:                ---> no 
+52. else not:                   ---> no
+
+Answer “yes” if the following are valid elif statements, given that they follow a statement if eggs == 12: and its if block. Answer “no” if they are not valid statements.
+53. elif:                   ---> no
+54. elif eggs != 12:        ---> yes
+55. else if eggs != 12:     ---> no
+56. elif eggs == 12:        ---> no
+
+Examine the following flawed program:
+password = 'swordfish'
+if password == 'rosebud':
+    print('Access granted.')
+else:
+    print('Access denied.')
+elif password == 'swordfish':
+    print('That is the old password.')
+57. Why does this program cause an error?
+---> because the elif block is placed behind the else block
+58. How many elif statements (each with an elif block of code following it) can follow an if statement and an if block of code?
+---> many
