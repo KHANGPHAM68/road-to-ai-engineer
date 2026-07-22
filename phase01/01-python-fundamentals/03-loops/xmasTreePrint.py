@@ -11,4 +11,4 @@ for i in range(1, size + 1):
     print()
 
 for i in range(0, size, 2):
-    print((" " * (size - 1)) + "#")
+    print((" " * (size - 1)) + "#") 

@@ -1,0 +1,160 @@
+The first line of any function definition is a def statement. If a function can accept arguments, this def statement contains parameters, which are variables that store arguments. For each of the following, answer “yes” if it is a valid Python def statement; answer “no” if it is an invalid Python def statement.
+1. def hello:           no
+2. define hello(name):  no
+3. def h(name):         yes
+4. hello(name):         no
+5. def:                 no
+6. def hello():         yes
+7. def hello(name):     yes
+
+The following questions further test your ability to recognize the elements of function definitions.
+8. How can you tell that the following code defines a function rather than calls a function?
+def say_hello():  -> Because it has a def keyword and a :
+9. What are the parameters in the following def statement?
+def add_club_member(first_name, last_name): ->They are first_name, last_name
+10. In the following code, is 'Albert' a parameter or an argument?
+say_hello('Albert') ->'Albert' is an argument
+
+The code in the block that follows the def statement is the body of the function. To correctly understand a program, you must be able to distinguish the body, which runs only when the function is called, from the code that exists outside the function. To that end, each of the following examples is a complete program; describe what it prints.
+
+11.
+def say_hello():
+    print('Hello')
+-> This function prints out 'Hello'
+12.
+def say_hello():
+    print('Hello')
+for i in range(3):
+    say_hello()
+-> This program calls say_hello() function 3 times and prints out 'Hello' 3 times
+13.
+def say_hello():
+    for i in range(3):
+        print('Hello')
+say_hello()
+say_hello()
+-> This program calls say_hello() function twice and prints out 'Hello' 6 times
+
+To test whether you understand the data types returned by Python functions, answer the following questions about return statements.
+14. What is the data type of the return value in the following function?
+def enter_password(password):
+    if password == 'swordfish':
+        return True
+    else:
+        return False
+-> The data type of the return value in this function is string
+15. In the previous enter_password() function, what can the data type of the password parameter be?
+-> The data type of the password parameter can be string
+16. What is the data type of the return value in the following function?
+def get_greeting():
+    print('What is your name?')
+    name = input()
+    return 'Hello, ' + name
+-> The data type of the return value for this function is string
+
+Determine whether the following expressions involving None evaluate to True or False. (You can enter the expression into the interactive shell to find out.)
+17. None == True        -> False
+18. None == False       -> False
+19. None == 'None'      -> False
+20. None == None        -> True
+21. None == 'hello'     -> False
+22. None == 0           -> False
+23. None == -1.5        -> False
+
+The call stack is how Python remembers where to return the execution after each function call. The call stack isn’t stored in a variable in your program; rather, it’s a section of your computer’s memory that Python handles automatically behind the scenes. When your program calls a function, Python creates a frame object on the top of the call stack. Frame objects store the line number of the original function call so that Python can remember where to return. Answer the following questions about the frame objects, the call stack, and function calls.
+24. What does a stack frame object represent?
+-> It contains the line number of the original function call
+25. When is a stack frame object pushed to the top of the call stack?
+-> It's pushed to the top of the call stack when a program calls a function
+26. When is a stack frame object popped off the top of the call stack?
+-> It's popped off the top of the call stack when a function call return
+27. What does the stack frame object at the top of the call stack represent?
+-> It represents the line number of the latest function call
+28. A call to a function named spam() is made. Then, a call to an eggs() function is made. Next, eggs() returns. After that, a call to a bacon() function is made. What does the call stack look like at this point?
+-> spam --> bacon
+29. A program has absolutely no function calls in it. What does the call stack look like while the program runs?
+-> Empty
+
+Answer the following questions about global variables, local variables, and scopes.
+30. Are function parameters global variables or local variables?
+-> Local variables
+31. A variable in a function is marked with the global statement. Is it a global or local variable?
+-> Global variable
+32. Can a variable be both global and local?
+-> No
+33. If a global spam variable exists, and a function has a spam = 42 assignment statement and no global spam statement, is the spam variable in the function local or global?
+-> Local
+34. If a global spam variable exists, and a function has a spam = 42 assignment statement as well as a global spam statement, is the spam variable in the function local or global?
+-> Global
+35. If a global spam variable exists, and a function never assigns spam a value and has no global spam statement, the function uses the spam variable (such as in print(spam)). Is the spam variable in the function local or global?
+Global
+
+To test whether you correctly understand Python’s scoping rules, determine what each of the following programs outputs.
+36.
+def func(spam):
+    print(spam)
+spam = 'dog'
+func('cat')
+-> Prints out 'cat'
+37.
+def func(eggs):
+    print(spam)
+spam = 'dog'
+func('cat')
+-> Prints out 'dog'
+38.
+def func():
+    spam = 'cat'
+spam = 'dog'
+func()
+print(spam)
+-> Prints out 'dog'
+39.
+def func():
+    global spam
+    spam = 'cat'
+spam = 'dog'
+func()
+print(spam)
+-> Prints out 'cat'
+40.
+def func():
+    global spam
+    print(spam)
+    spam = 'cat'
+spam = 'dog'
+func()
+-> Prints out 'dog'
+41.
+def func():
+    print(spam)
+    spam = 'cat'
+spam = 'dog'
+func()
+-> UnboundLocalError
+
+For each of the following programs, determine whether the program would crash if the user entered a non-number.
+42.
+print('Enter a number:')
+number = int(input())
+try:
+    print('You entered a number.')
+except:
+    print('You did not enter a number.')
+-> No crash because the except handled all errors and didn't cause the program to crash 
+43.
+print('Enter a number:')
+try:
+    number = int(input())
+    print('You entered a number.')
+except ValueError:
+    print('You did not enter a number.')
+-> No crash because the except block handled the ValueError which was the error for entering a non-number
+44.
+print('Enter a number:')
+try:
+    number = int(input())
+    print('You entered a number.')
+except ZeroDivisionError:
+    print('You did not enter a number.')
+-> Crash because the except blocks only handled the ZeroDivisionError, didn't handle the ValueError caused by user when entering a non-number
